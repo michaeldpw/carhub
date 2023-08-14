@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { CustomButton } from ".";
+import ThemeButton from "./ThemeButton";
+import { UserIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -37,13 +39,16 @@ const Navbar = () => {
             className="object-contain"
           />
         </Link>
+        <ThemeButton />
         <CustomButton
           title="Sign In"
           btnType={"button"}
           containerStyles={`rounded-full min-w-[130px] ${
             sticky ? "text-white bg-primary-blue" : "text-primary-blue bg-white"
           }`}
-        ></CustomButton>
+        >
+          <UserIcon className="w-5 h-5" />
+        </CustomButton>
       </nav>
     </header>
   );

@@ -15,13 +15,13 @@ const CarCard = ({ car }: CarCardProps) => {
   const carRent = calculateCarRent(city_mpg, year);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="car-card group">
+    <div className="car-card group dark:bg-slate-700">
       <div className="=car-card__content">
-        <h2 className="car-card__content-title">
+        <h2 className="car-card__content-title dark:text-gray-100">
           {make} {model}
         </h2>
       </div>
-      <p className="flex mt-6 text-[32px] font-extrabold">
+      <p className="flex mt-6 text-[32px] font-extrabold dark:text-gray-300">
         <span className="self-start text-[14px] font-semibold">$</span>
         {carRent}
         <span className="self-end text-[14px] font-medium">/day</span>
@@ -44,17 +44,21 @@ const CarCard = ({ car }: CarCardProps) => {
               height={20}
               alt="steering wheel"
             />
-            <p className="text-[14px] leading-[17px]">
+            <p className="text-[14px] leading-[17px] dark:text-gray-300">
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
           <div className="car-card__icon">
             <Image src="/tire.svg" width={20} height={20} alt="seat" />
-            <p className="car-card__icon-text">{drive.toUpperCase()}</p>
+            <p className="car-card__icon-text dark:text-gray-300">
+              {drive.toUpperCase()}
+            </p>
           </div>
           <div className="car-card__icon">
             <Image src="/gas.svg" width={20} height={20} alt="seat" />
-            <p className="car-card__icon-text">{city_mpg} MPG</p>
+            <p className="car-card__icon-text dark:text-gray-300">
+              {city_mpg} MPG
+            </p>
           </div>
         </div>
 
