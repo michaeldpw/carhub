@@ -99,3 +99,30 @@ export const footerLinks = [
         ],
     },
 ];
+
+export const solutions = [
+    {
+        name: 'How it works',
+        // description: 'Measure actions your users take',
+        href: '##',
+        //   icon: IconOne,
+    },
+    {
+        name: 'Featured',
+        // description: 'Create your own targeted content',
+        href: '##',
+        //   icon: IconTwo,
+    },
+    {
+        name: 'Partnership',
+        // description: 'Keep track of your growth',
+        href: '##',
+        //   icon: IconThree,
+    },
+    {
+        name: 'Business Relation',
+        // description: 'Keep track of your growth',
+        href: '##',
+        //   icon: IconThree,
+    },
+]

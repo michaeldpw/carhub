@@ -9,6 +9,7 @@ import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
 import SearchButton from "./SearchButton";
 import ShowMore from "./SHowMore";
+import NavbarLinkItem from "./NavbarLinkItem";
 
 export {
     CarCard,
@@ -18,6 +19,7 @@ export {
     Footer,
     Hero,
     Navbar,
+    NavbarLinkItem,
     SearchBar,
     SearchButton,
     SearchManufacturer,
