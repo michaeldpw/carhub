@@ -10,6 +10,7 @@ import CarDetails from "./CarDetails";
 import SearchButton from "./SearchButton";
 import ShowMore from "./SHowMore";
 import NavbarLinkItem from "./NavbarLinkItem";
+import Sidenav from "./Sidenav";
 
 export {
     CarCard,
@@ -23,5 +24,6 @@ export {
     SearchBar,
     SearchButton,
     SearchManufacturer,
-    ShowMore
+    ShowMore,
+    Sidenav
 };

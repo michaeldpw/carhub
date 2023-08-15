@@ -64,95 +64,9 @@ const NavbarLinkItem = ({ menuContent, label, link, menuButtonStyle }: NavbarLin
                                         </button>
                                     )}
                                 </Menu.Item>
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <button
-                                            className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                        >
-                                            {active ? (
-                                                <span
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : (
-                                                <span
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                            Duplicate
-                                        </button>
-                                    )}
-                                </Menu.Item>
+
                             </div>
-                            <div className="px-1 py-1">
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <button
-                                            className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                        >
-                                            {active ? (
-                                                <span
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : (
-                                                <span
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                            Archive
-                                        </button>
-                                    )}
-                                </Menu.Item>
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <button
-                                            className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                        >
-                                            {active ? (
-                                                <span
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : (
-                                                <span
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                            Move
-                                        </button>
-                                    )}
-                                </Menu.Item>
-                            </div>
-                            <div className="px-1 py-1">
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <button
-                                            className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                        >
-                                            {active ? (
-                                                <span
-                                                    className="mr-2 h-5 w-5 text-violet-400"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : (
-                                                <span
-                                                    className="mr-2 h-5 w-5 text-violet-400"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                            Delete
-                                        </button>
-                                    )}
-                                </Menu.Item>
-                            </div>
+
                         </Menu.Items>
                     </Transition>
                 </Menu>

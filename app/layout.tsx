@@ -1,4 +1,4 @@
-import { Footer, Navbar } from "@/components";
+import { Footer, Navbar, Sidenav } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
 import Provider from "@/context/Provider";
@@ -19,6 +19,7 @@ export default function RootLayout({
         <Provider>
           <Navbar />
           {children}
+          <Sidenav />
           <Footer />
         </Provider>
       </body>
