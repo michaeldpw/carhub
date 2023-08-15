@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { footerLinks } from "@/constants";
+import ThemeButton from "./ThemeButton";
 const Footer = () => {
   return (
     <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100">
@@ -18,6 +19,7 @@ const Footer = () => {
             Carhub 2023 <br />
             All rights reserved &copy;
           </p>
+          <ThemeButton />
         </div>
 
         <div className="footer__links dark:text-gray-100">

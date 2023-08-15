@@ -45,16 +45,14 @@ const Navbar = () => {
         <div className="flex items-center">
           <div className="hidden md:flex items-center">
             <NavbarLinkItem label="Home" link="/"></NavbarLinkItem>
+            <NavbarLinkItem label="Find a Car" link="/"></NavbarLinkItem>
             <NavbarLinkItem label="Socials" menuContent={solutions}></NavbarLinkItem>
             <NavbarLinkItem label="About" menuContent={solutions}></NavbarLinkItem>
           </div>
-
-
-          <ThemeButton />
           <CustomButton
             title="Sign In"
             btnType={"button"}
-            containerStyles={`rounded-full min-w-[130px] ${sticky ? "text-white bg-primary-blue" : "text-primary-blue bg-white "
+            containerStyles={`rounded-full min-w-[130px] ml-1 lg:ml-16 ${sticky ? "text-white bg-primary-blue" : "text-primary-blue bg-white "
               }`}
           >
             <UserIcon className="w-5 h-5" />

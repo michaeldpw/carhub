@@ -19,12 +19,12 @@ interface NavbarLinkItemProps {
 const NavbarLinkItem = ({ menuContent, label, link, menuButtonStyle }: NavbarLinkItemProps) => {
     return (
         link && menuContent === undefined ? (
-            <Link href={link} className='px-4 mx-4 text-gray-700 font-semibold dark:text-gray-200'>{label}</Link>
+            <Link href={link} className='px-4 mx-1 lg:mx-4 text-gray-700 font-semibold dark:text-gray-200'>{label}</Link>
         ) : (
             <div>
                 <Menu as="div" className="relative inline-block text-left">
                     <div>
-                        <Menu.Button className="inline-flex w-full justify-center rounded-md bg-transparent bg-opacity-20 px-4 py-2 mx-4 font-semibold text-gray-700 dark:text-gray-200 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                        <Menu.Button className="mx-1 lg:mx-4 inline-flex w-full justify-center rounded-md bg-transparent bg-opacity-20 px-4 py-2 mx-2 font-semibold text-gray-700 dark:text-gray-200 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                             {label}
                             <ChevronDownIcon
                                 className="ml-2 mt-[2px] h-5 w-5 text-gray-700 dark:text-gray-300 hover:text-violet-100"
