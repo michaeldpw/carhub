@@ -57,7 +57,7 @@ const Navbar = () => {
           >
             <UserIcon className="w-5 h-5" />
           </CustomButton>
-          <Bars3Icon className={`w-5 h-5 cursor-pointer ml-4 md:hidden block ${sticky ? 'text-slate-700' : 'md:text-white text-gray-900'}`} />
+          <Bars3Icon className={`w-5 h-5 cursor-pointer ml-4 md:hidden block ${sticky ? 'text-slate-700 dark:text-white' : 'md:text-white text-gray-900 dark:text-white'}`} />
 
         </div>
 
