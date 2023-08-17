@@ -1,13 +1,17 @@
 "use client"
+import { Context } from '@/context'
+// import { SidenavContext } from '@/context/Provider'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 
 const Sidenav = () => {
-    const [open, setOpen] = useState(false)
+    const { state, dispatch } = useContext(Context)
+
+    // const { isOpen } = useContext(SidenavContext);
     return (
-        <Transition.Root show={open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={setOpen}>
+        <Transition.Root show={state.isSidenavOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-40" onClose={() => dispatch({ type: 'TOGGLE', payload: false })}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-500"
@@ -42,25 +46,27 @@ const Sidenav = () => {
                                         leaveFrom="opacity-100"
                                         leaveTo="opacity-0"
                                     >
-                                        <div className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                                        <div className="absolute left-4 top-0 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
                                             <button
                                                 type="button"
-                                                className="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                                                onClick={() => setOpen(false)}
+                                                className="relative rounded-md text-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                                                onClick={() => dispatch({ type: 'TOGGLE', payload: false })}
                                             >
                                                 <span className="absolute -inset-2.5" />
                                                 <span className="sr-only">Close panel</span>
-                                                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                                <XMarkIcon className="h-10 w-10" aria-hidden="true" />
                                             </button>
                                         </div>
                                     </Transition.Child>
                                     <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                                         <div className="px-4 sm:px-6">
-                                            <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
+                                            {/* <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
                                                 Panel title
-                                            </Dialog.Title>
+                                            </Dialog.Title> */}
                                         </div>
-                                        <div className="relative mt-6 flex-1 px-4 sm:px-6">{/* Your content */}</div>
+                                        <div className="relative mt-6 flex-1 px-4 sm:px-6">
+
+                                        </div>
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>

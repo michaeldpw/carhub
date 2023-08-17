@@ -1,7 +1,10 @@
 import { Footer, Navbar, Sidenav } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
-import Provider from "@/context/Provider";
+
+import { Provider } from "@/context";
+import MyThemeProvider from "@/context/MyThemeProvider";
+
 
 export const metadata: Metadata = {
   title: "Car Hub",
@@ -17,11 +20,14 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body className="relative">
         <Provider>
-          <Navbar />
-          {children}
-          <Sidenav />
-          <Footer />
+          <MyThemeProvider>
+            <Navbar />
+            {children}
+            <Sidenav />
+            <Footer />
+          </MyThemeProvider>
         </Provider>
+
       </body>
     </html>
   );

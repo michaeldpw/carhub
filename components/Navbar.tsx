@@ -1,17 +1,21 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { CustomButton, NavbarLinkItem } from ".";
 import ThemeButton from "./ThemeButton";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { solutions } from "@/constants";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Context } from "@/context";
+// import { SidenavContext } from "@/context/Provider";
 
 
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+  const { state, dispatch } = useContext(Context)
+
   useEffect(() => {
     window.addEventListener("scroll", scrollEventCallback);
 
@@ -57,7 +61,7 @@ const Navbar = () => {
           >
             <UserIcon className="w-5 h-5" />
           </CustomButton>
-          <Bars3Icon className={`w-5 h-5 cursor-pointer ml-4 md:hidden block ${sticky ? 'text-slate-700 dark:text-white' : 'md:text-white text-gray-900 dark:text-white'}`} />
+          <Bars3Icon onClick={() => dispatch({ type: 'TOGGLE', payload: true })} className={`w-5 h-5 cursor-pointer ml-4 md:hidden block ${sticky ? 'text-slate-700 dark:text-white' : 'md:text-white text-gray-900 dark:text-white'}`} />
 
         </div>
 
