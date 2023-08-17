@@ -5,11 +5,11 @@ import { createContext, useReducer } from "react";
 
 const initialState = {
     user: {},
-    isSidenavOpen: true
+    isSidenavOpen: false
 }
 
 // create context
-const Context = createContext({});
+const Context = createContext({} as any);
 
 // combine reducer function
 const combineReducers = (...reducers) => (state, action) => {
