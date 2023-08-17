@@ -1,4 +1,4 @@
-export const sidenav = (state, action) => {
+export const sidenav = (state: any, action: any) => {
     switch (action.type) {
         case "TOGGLE":
             console.log(action);
