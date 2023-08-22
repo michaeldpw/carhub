@@ -7,18 +7,24 @@ import CustomFilter from "./CustomFilter";
 import SearchManufacturer from "./SearchManufacturer";
 import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
+import Form from "./Form";
 import SearchButton from "./SearchButton";
 import ShowMore from "./SHowMore";
 import NavbarLinkItem from "./NavbarLinkItem";
 import Sidenav from "./Sidenav";
+import Input from "./Input"
+import Checkbox from "./Checkbox";
 
 export {
     CarCard,
     CarDetails,
+    Checkbox,
     CustomButton,
     CustomFilter,
     Footer,
+    Form,
     Hero,
+    Input,
     Navbar,
     NavbarLinkItem,
     SearchBar,

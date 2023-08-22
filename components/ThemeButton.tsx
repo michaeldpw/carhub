@@ -6,6 +6,7 @@ import React from "react";
 
 const ThemeButton = () => {
   const { resolvedTheme, setTheme } = useTheme();
+
   return (
     <button
       aria-label="Toggle Dark Mode"

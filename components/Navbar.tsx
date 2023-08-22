@@ -8,7 +8,7 @@ import { UserIcon } from "@heroicons/react/24/outline";
 import { solutions } from "@/constants";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { Context } from "@/context";
-// import { SidenavContext } from "@/context/Provider";
+
 
 
 
@@ -52,17 +52,21 @@ const Navbar = () => {
             <NavbarLinkItem label="Find a Car" link="/"></NavbarLinkItem>
             <NavbarLinkItem label="Socials" menuContent={solutions}></NavbarLinkItem>
             <NavbarLinkItem label="About" menuContent={solutions}></NavbarLinkItem>
-          </div>
-          <CustomButton
-            title="Sign In"
-            btnType={"button"}
-            containerStyles={`rounded-full min-w-[130px] ml-1 lg:ml-16 ${sticky ? "text-white bg-primary-blue" : "text-primary-blue bg-white "
-              }`}
-          >
-            <UserIcon className="w-5 h-5" />
-          </CustomButton>
-          <Bars3Icon onClick={() => dispatch({ type: 'TOGGLE', payload: true })} className={`w-5 h-5 cursor-pointer ml-4 md:hidden block ${sticky ? 'text-slate-700 dark:text-white' : 'md:text-white text-gray-900 dark:text-white'}`} />
+          </div><Link href="/account/login">
+            <CustomButton
+              title="Sign In"
+              btnType={"button"}
+              containerStyles={`rounded-full min-w-[130px] ml-1 lg:ml-16 ${sticky ? "text-white bg-primary-blue" : "text-primary-blue bg-white "
+                }`}
+            >
+              <UserIcon className="w-5 h-5" />
+              <Bars3Icon onClick={() => dispatch({ type: 'TOGGLE', payload: true })} className={`w-5 h-5 cursor-pointer ml-4 md:hidden block ${sticky ? 'text-slate-700 dark:text-white' : 'md:text-white text-gray-900 dark:text-white'}`} />
 
+
+
+            </CustomButton>
+
+          </Link>
         </div>
 
       </nav>

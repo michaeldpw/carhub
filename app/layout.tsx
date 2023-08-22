@@ -1,34 +1,34 @@
 import { Footer, Navbar, Sidenav } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
+import { useRouter } from "next/router";
 
-import { Provider } from "@/context";
-import MyThemeProvider from "@/context/MyThemeProvider";
+const hideNavFooter = ['/account/login', '/account/register'];
 
 
-export const metadata: Metadata = {
-  title: "Car Hub",
-  description: "Discover the best cars in the world",
-};
+// export const metadata: Metadata = {
+//   title: "Car Hub",
+//   description: "Discover the best cars in the world",
+// };
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+  const { pathname } = router;
+  const isNavFooterShown = !hideNavFooter.includes(pathname);
+  console.log(pathname, isNavFooterShown);
   return (
-    <html lang="en" className="light" style={{ colorScheme: "light" }}>
-      <body className="relative">
-        <Provider>
-          <MyThemeProvider>
-            <Navbar />
-            {children}
-            <Sidenav />
-            <Footer />
-          </MyThemeProvider>
-        </Provider>
 
-      </body>
-    </html>
+
+    <>
+      {isNavFooterShown && <Navbar />}
+      {children}
+      <Sidenav />
+      {isNavFooterShown && <Footer />}
+
+    </>
   );
 }

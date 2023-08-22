@@ -45,7 +45,7 @@ const NavbarLinkItem = ({ menuContent, label, link, menuButtonStyle }: NavbarLin
                             <div className="px-1 py-1 ">
                                 {
                                     menuContent?.map(menuItem => (
-                                        <Menu.Item>
+                                        <Menu.Item key={menuItem.name}>
                                             {({ active }) => (
                                                 <button
                                                     className={`${active ? 'bg-violet-500 text-white' : 'text-gray-900'
