@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 
-const Checkbox = ({ label, name, disabled }: any) => {
+const Checkbox = ({ label, name, disabled, onChange }: any) => {
     const [isChecked, setIsChecked] = useState(false);
     return (
-        <label className='cursor-pointer flex items-center'>
+        <label className='cursor-pointer flex items-center w-fit'>
             <input type="checkbox"
                 name={name}
-                checked={isChecked}
                 disabled={disabled}
-                onChange={() => setIsChecked(!isChecked)}
-                className='cursor-pointer appearance-none w-4 h-4 border border-gray-300 hover:border-indigo-700 rounded-sm checked:bg-indigo-700 checked:border-indigo-700' />
+                onChange={onChange}
+                className='cursor-pointer appearance-none w-4 h-4 border border-gray-300 hover:border-blue-500 rounded-sm checked:bg-blue-500 checked:border-blue-500' />
             <span className='ml-3'>{label}</span>
         </label>
 
