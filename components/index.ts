@@ -14,6 +14,8 @@ import NavbarLinkItem from "./NavbarLinkItem";
 import Sidenav from "./Sidenav";
 import Input from "./Input"
 import Checkbox from "./Checkbox";
+import FormField from "./FormField";
+
 
 export {
     CarCard,
@@ -23,6 +25,7 @@ export {
     CustomFilter,
     Footer,
     Form,
+    FormField,
     Hero,
     Input,
     Navbar,

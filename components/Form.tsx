@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { Checkbox, CustomButton, Input } from '.';
+import { Checkbox, CustomButton, FormField, Input } from '.';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 
 const Form = ({ fields, onSubmit }: any) => {
     const [formValues, setFormValues] = useState({} as any);
-    const [formErrors, setFormErrors] = useState({});
+    const [formErrors, setFormErrors] = useState({} as any);
     const handleChange = (event: any) => {
         console.log(event);
         const { name, value, type, checked } = event.target;
         const newValue = type === 'checkbox' ? checked : value;
         setFormValues((prevValues: any) => ({ ...prevValues, [name]: newValue }));
-        setFormErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
+        setFormErrors((prevErrors: any) => ({ ...prevErrors, [name]: '' }));
     }
     const handleSubmit = (event: any) => {
         event.preventDefault();
@@ -43,10 +43,13 @@ const Form = ({ fields, onSubmit }: any) => {
                 console.log(field);
                 switch (type) {
                     case 'text':
-                        return <Input key={rest.name} {...rest} onChange={handleChange} />;
+                        return (
+                            <Input key={rest.name} {...rest} onChange={handleChange} error={formErrors[field.name]} />
+
+                        );
                     case 'password':
                         const [visible, setVisible] = useState(false)
-                        return <Input key={rest.name} {...rest} onChange={handleChange} type={visible ? 'text' : 'password'} >
+                        return <Input key={rest.name} {...rest} onChange={handleChange} type={visible ? 'text' : 'password'} error={formErrors[field.name]}>
                             <button className='absolute top-4 right-3 hover:bg-slate-300 dark:hover:bg-slate-500 p-1 rounded-sm dark:focus:bg-slate-600'
                                 onClick={() => setVisible(!visible)}>
                                 {
@@ -67,7 +70,7 @@ const Form = ({ fields, onSubmit }: any) => {
                         return null;
                 }
             })}
-            <CustomButton title="Login" btnType='submit' containerStyles='bg-blue-500 text-white rounded-md mt-8 w-full focus:ring focus:ring-indigo-300 hover:bg-blue-600 active:bg-blue-700'>
+            <CustomButton title="Login" btnType='submit' containerStyles='bg-blue-500 text-white rounded-md mt-8 w-full focus:ring focus:ring-blue-300 hover:bg-blue-600 active:bg-blue-700'>
             </CustomButton>
         </form>
     )
