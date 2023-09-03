@@ -52,7 +52,8 @@ const Navbar = () => {
             <NavbarLinkItem label="Find a Car" link="/"></NavbarLinkItem>
             <NavbarLinkItem label="Socials" menuContent={solutions}></NavbarLinkItem>
             <NavbarLinkItem label="About" menuContent={solutions}></NavbarLinkItem>
-          </div><Link href="/account/login">
+          </div>
+          <Link href="/account/login">
             <CustomButton
               title="Sign In"
               btnType={"button"}
@@ -60,14 +61,16 @@ const Navbar = () => {
                 }`}
             >
               <UserIcon className="w-5 h-5" />
-              <Bars3Icon onClick={() => dispatch({ type: 'TOGGLE', payload: true })} className={`w-5 h-5 cursor-pointer ml-4 md:hidden block ${sticky ? 'text-slate-700 dark:text-white' : 'md:text-white text-gray-900 dark:text-white'}`} />
 
 
 
             </CustomButton>
 
           </Link>
+          <Bars3Icon onClick={() => dispatch({ type: 'TOGGLE', payload: true })} className={`ml-4 w-5 h-5 cursor-pointer md:hidden block ${sticky ? 'text-slate-700 dark:text-white' : 'md:text-white text-gray-900 dark:text-white'}`} />
+
         </div>
+
 
       </nav>
     </header>

@@ -25,7 +25,7 @@ const login = () => {
                 </div>
 
             </div>
-            <Link href="/"><div>Return home</div></Link>
+            <Link href="/" className='mt-10'><div>Return home</div></Link>
         </div>
     )
 }
